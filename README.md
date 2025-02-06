@@ -20,7 +20,7 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require abrahamgreyson/laravel-citizen
+composer require abe/laravel-citizen
 ```
 
 You can publish and run the migrations with:
@@ -52,7 +52,7 @@ php artisan vendor:publish --tag="laravel-citizen-views"
 ## Usage
 
 ```php
-$citizen = new Abe\Citizen();
+$citizen = new Citizen\Citizen();
 echo $citizen->echoPhrase('Hello, Abe!');
 ```
 
