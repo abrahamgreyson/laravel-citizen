@@ -2,9 +2,9 @@
 
 namespace Abe\Citizen\Tests;
 
+use Abe\Citizen\CitizenServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Abe\Citizen\CitizenServiceProvider;
 
 class TestCase extends Orchestra
 {

@@ -2,9 +2,9 @@
 
 namespace Abe\Citizen;
 
+use Abe\Citizen\Commands\CitizenCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Abe\Citizen\Commands\CitizenCommand;
 
 class CitizenServiceProvider extends PackageServiceProvider
 {
