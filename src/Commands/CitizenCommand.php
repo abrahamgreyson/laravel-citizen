@@ -1,6 +1,6 @@
 <?php
 
-namespace Abe\Citizen\Commands;
+namespace Citizen\Commands;
 
 use Illuminate\Console\Command;
 

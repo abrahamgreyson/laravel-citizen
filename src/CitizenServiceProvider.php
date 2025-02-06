@@ -1,8 +1,8 @@
 <?php
 
-namespace Abe\Citizen;
+namespace Citizen;
 
-use Abe\Citizen\Commands\CitizenCommand;
+use Citizen\Commands\CitizenCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

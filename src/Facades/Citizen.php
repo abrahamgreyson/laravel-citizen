@@ -1,6 +1,6 @@
 <?php
 
-namespace Abe\Citizen\Facades;
+namespace Citizen\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -11,6 +11,6 @@ class Citizen extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \Abe\Citizen\Citizen::class;
+        return \Citizen\Citizen::class;
     }
 }

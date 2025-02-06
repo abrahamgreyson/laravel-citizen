@@ -1,5 +1,5 @@
 <?php
 
-namespace Abe\Citizen;
+namespace Citizen;
 
 class Citizen {}
