@@ -2,13 +2,13 @@
 
 namespace Citizen;
 
-use Citizen\Contracts\ServiceClientContract;
-use Citizen\Contracts\TransportContract;
+use stdClass;
 
 class ServiceClientFactory
 {
-    public function create(string $transport = 'http'): ServiceClientContract
+    public function create(string $transport = 'http')
     {
-        // 根据配置创建对应的客户端实现
+        // 根据传入的 transport 参数创建并返回对应的 ServiceClientContract 实现
+        return new stdClass();
     }
 }

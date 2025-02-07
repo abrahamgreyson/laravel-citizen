@@ -11,7 +11,7 @@ class ServiceClient implements ServiceClientContract
     public function __construct(
         protected ServiceDiscoveryContract $discovery,
         protected TransportContract $transport,
-        protected LoadBalancer $loadBalancer
+        protected $loadBalancer
     ) {}
 
     public function call(string $service, string $method, array $parameters = []): mixed
