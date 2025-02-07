@@ -4,7 +4,7 @@
 return [
     'discovery' => [
         'driver' => env('SERVICE_DISCOVERY_DRIVER', 'local'),
-        
+
         'drivers' => [
             'local' => [
                 'driver' => \Citizen\Discovery\LocalServiceDiscovery::class,
@@ -20,7 +20,7 @@ return [
             ],
         ],
     ],
-    
+
     // 本地开发服务配置
     'services' => [
         'user-service' => env('USER_SERVICE_HOST', 'http://localhost:8001'),

@@ -7,7 +7,8 @@ use Citizen\Contracts\ServiceDiscoveryContract;
 /**
  * stub
  */
-class NacosClient{
+class NacosClient
+{
     public function getServices(string $service): array
     {
         return [];
@@ -17,7 +18,7 @@ class NacosClient{
 class NacosServiceDiscovery implements ServiceDiscoveryContract
 {
     protected ?NacosClient $client;
-    
+
     public function discover(string $service): array
     {
         return $this->client->getServices($service);

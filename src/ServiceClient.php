@@ -19,7 +19,7 @@ class ServiceClient implements ServiceClientContract
         $instance = $this->loadBalancer->select(
             $this->discovery->discover($service)
         );
-        
+
         return $this->transport->send($instance, $method, $parameters);
     }
 
@@ -28,7 +28,7 @@ class ServiceClient implements ServiceClientContract
         $instance = $this->loadBalancer->select(
             $this->discovery->discover($service)
         );
-        
+
         return $this->transport->sendAsync($instance, $method, $parameters);
     }
 }

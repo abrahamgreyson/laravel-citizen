@@ -27,9 +27,9 @@ class CitizenServiceProvider extends PackageServiceProvider
 
     public function registeringPackage()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/citizen.php', 'citizen');
+        $this->mergeConfigFrom(__DIR__.'/../config/citizen.php', 'citizen');
 
-        // discovery 
+        // discovery
         $this->app->singleton(ServiceDiscoveryContract::class, function ($app) {
             $driver = config('citizen.discovery.driver');
             $config = config("citizen.discovery.drivers.{$driver}");
@@ -38,7 +38,7 @@ class CitizenServiceProvider extends PackageServiceProvider
         });
 
         // registry
-        $this->app->singleton(ServiceRegistryContract::class, function($app){
+        $this->app->singleton(ServiceRegistryContract::class, function ($app) {
 
             return new class {};
         });

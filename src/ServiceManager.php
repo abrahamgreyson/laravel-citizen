@@ -13,10 +13,8 @@ class ServiceManager
     public function __construct(
         protected ServiceDiscoveryContract $discovery,
         protected ServiceRegistryContract $registry
-    )
-    {
-    }
-    
+    ) {}
+
     public function getServiceUrl(string $serviceName): ?string
     {
         return $this->discovery->discover($serviceName)['host'];
@@ -25,6 +23,7 @@ class ServiceManager
     public function call(string $serviceName, string $path, array $params = []): mixed
     {
         $url = $this->getServiceUrl($serviceName);
+
         return Http::baseurl($url)->get($path, $params);
     }
 }
