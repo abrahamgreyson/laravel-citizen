@@ -19,6 +19,7 @@ if (! function_exists('publish')) {
     function publish($class)
     {
         $class = new \ReflectionClass($class);
+
         return $class->getShortName();
     }
 }
