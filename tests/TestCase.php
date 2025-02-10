@@ -1,8 +1,8 @@
 <?php
 
-namespace Abe\Citizen\Tests;
+namespace Citizen\Tests;
 
-use Abe\Citizen\CitizenServiceProvider;
+use Citizen\CitizenServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Abe\\Citizen\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Citizen\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

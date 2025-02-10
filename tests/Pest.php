@@ -1,5 +1,5 @@
 <?php
 
-use Abe\Citizen\Tests\TestCase;
+use Citizen\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);
