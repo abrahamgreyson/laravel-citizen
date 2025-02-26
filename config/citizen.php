@@ -3,8 +3,7 @@
 // config/citizen.php
 return [
     'discovery' => [
-        'driver' => env('SERVICE_DISCOVERY_DRIVER', 'local'),
-
+        'default' => env('SERVICE_DISCOVERY_DRIVER', 'local'),
         'drivers' => [
             'local' => [
                 'driver' => \Citizen\Discovery\LocalServiceDiscovery::class,
@@ -13,6 +12,7 @@ return [
                 'driver' => \Citizen\Discovery\NacosServiceDiscovery::class,
                 'host' => env('NACOS_HOST'),
                 'port' => env('NACOS_PORT'),
+                'timeout' => env('NACOS_TIMEOUT', 5),
             ],
             'kubernetes' => [
                 'driver' => \Citizen\Discovery\KubernetesServiceDiscovery::class,

@@ -2,7 +2,7 @@
 
 namespace Citizen\Contracts;
 
-interface ServiceRegistryContract
+interface RegistryContract
 {
     /**
      * Register service to service registry.

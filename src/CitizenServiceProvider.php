@@ -3,8 +3,8 @@
 namespace Citizen;
 
 use Citizen\Commands\CitizenCommand;
-use Citizen\Contracts\ServiceDiscoveryContract;
-use Citizen\Contracts\ServiceRegistryContract;
+use Citizen\Contracts\DiscoveryContract;
+use Citizen\Contracts\RegistryContract;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -29,24 +29,23 @@ class CitizenServiceProvider extends PackageServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/citizen.php', 'citizen');
 
-        // discovery
-        $this->app->singleton(ServiceDiscoveryContract::class, function ($app) {
-            $driver = config('citizen.discovery.driver');
-            $config = config("citizen.discovery.drivers.{$driver}");
+        $driver = config('citizen.driver');
+        $config = config("citizen.drivers.{$driver}");
 
-            return new $config['driver']($config);
+        // discovery
+        $this->app->singleton(DiscoveryContract::class, function ($app) use ($config) {
+            return new $config['discovery_driver']($config);
         });
 
         // registry
-        $this->app->singleton(ServiceRegistryContract::class, function ($app) {
-
-            return new class {};
+        $this->app->singleton(RegistryContract::class, function ($app) use ($config) {
+            return new $config['registry_driver']($config);
         });
 
         $this->app->singleton(ServiceManager::class, function ($app) {
             return new ServiceManager(
-                $app->make(ServiceDiscoveryContract::class),
-                $app->make(ServiceRegistryContract::class)
+                $app->make(DiscoveryContract::class),
+                $app->make(RegistryContract::class)
             );
         });
     }

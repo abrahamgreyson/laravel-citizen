@@ -2,7 +2,7 @@
 
 namespace Citizen\Contracts;
 
-interface ServiceDiscoveryContract
+interface DiscoveryContract
 {
     /**
      * Get services list that match the given service name.

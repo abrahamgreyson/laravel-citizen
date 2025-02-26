@@ -1,10 +1,10 @@
 <?php
 
-namespace Citizen\Discovery;
+namespace Citizen\Discovery\Drivers;
 
-use Citizen\Contracts\ServiceDiscoveryContract;
+use Citizen\Contracts\DiscoveryContract;
 
-class LocalServiceDiscovery implements ServiceDiscoveryContract
+class LocalServiceDiscovery implements DiscoveryContract
 {
     /**
      * Cached services list.
